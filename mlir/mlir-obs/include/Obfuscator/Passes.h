@@ -36,7 +36,6 @@ struct SymbolObfuscatePass
   SymbolObfuscatePass() = default;
   SymbolObfuscatePass(const std::string &key) : key(key) {}
 
-  //CLI Support
   StringRef getArgument() const override { return "symbol-obfuscate"; }
   StringRef getDescription() const override {
     return "Obfuscate symbol names randomly";
@@ -47,8 +46,8 @@ struct SymbolObfuscatePass
   std::string key = "seed";
 };
 
-
 std::unique_ptr<Pass> createSymbolObfuscatePass(llvm::StringRef key);
+
 
 } // namespace obs
 } // namespace mlir

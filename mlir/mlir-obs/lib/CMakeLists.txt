@@ -3,9 +3,6 @@ add_mlir_library(MLIROBS
   SymbolPass.cpp
   PassRegistrations.cpp
 
-  DEPENDS
-    MLIROBSIncGen
-
   LINK_LIBS PUBLIC
     MLIRIR
     MLIRPass

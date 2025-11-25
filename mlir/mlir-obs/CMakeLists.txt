@@ -5,17 +5,10 @@ project(MLIROBF LANGUAGES CXX C)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 
+# MLIR is already part of the parent build — DO NOT use find_package(MLIR)
 
-find_package(MLIR REQUIRED CONFIG) # What this does is that it tells the code that I want to use MLIR. Go find it and link to it.
+# Add include path for headers
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include)
 
-
-message(STATUS "Found MLIR: ${MLIR_PACKAGE_PREFIX}")
-
-
-include_directories(${PROJECT_SOURCE_DIR}/include) # THis helps it find include/Obfuscator/Passes.h
-
-
-add_subdirectory(lib) # This tells the CMake to build the code in  mlir-obfuscator/lib/
-
-
-mlir_print_global_pass_registry() # Optional: Thjis is just to print MLIR passes for debugging
+# Add the library directory
+add_subdirectory(lib)

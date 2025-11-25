@@ -256,6 +256,7 @@ add_subdirectory(include/mlir)
 add_subdirectory(lib)
 
 # Adding your custom Obfuscation Project
+message(STATUS ">>> MLIR: about to add_subdirectory(mlir-obs) - CWD=${CMAKE_CURRENT_SOURCE_DIR}")
 add_subdirectory(mlir-obs)
 
 # API needs all dialects for registration, but should be built before tests.

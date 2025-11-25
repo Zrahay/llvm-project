@@ -33,6 +33,15 @@ void StringEncryptPass::runOnOperation() {
     SmallVector<NamedAttribute> newAttrs;
 
     for (auto &attr : op->getAttrs()) {
+      StringRef attrName = attr.getName().getValue();
+      if (attrName == "sym_name" || 
+          attrName == "function_ref" ||
+          attrName == "callee") {
+        newAttrs.push_back(attr);
+        continue;  // Skip to next attribute
+      }
+
+      // Original encryption logic (unchanged)
       if (auto strAttr = llvm::dyn_cast<StringAttr>(attr.getValue())) {
         std::string original = strAttr.getValue().str();
         std::string encrypted = xorEncrypt(original, key);

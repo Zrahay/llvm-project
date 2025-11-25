@@ -259,9 +259,6 @@ add_subdirectory(lib)
 message(STATUS ">>> MLIR: about to add_subdirectory(mlir-obs) - CWD=${CMAKE_CURRENT_SOURCE_DIR}")
 add_subdirectory(mlir-obs)
 
-# API needs all dialects for registration, but should be built before tests.
-add_subdirectory(tests)
-
 # C API needs all dialects for registration, but should be built before tests.
 add_subdirectory(lib/CAPI)
 

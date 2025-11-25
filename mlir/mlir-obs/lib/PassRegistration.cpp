@@ -5,9 +5,13 @@ using namespace mlir;
 using namespace mlir::obs;
 
 namespace {
-  PassRegistration<StringEncryptPass>
-    stringReg("string-encrypt", "Encrypt string attributes using XOR");
+  // Register StringEncryptPass
+  PassRegistration<StringEncryptPass> stringReg([]() {
+    return std::make_unique<StringEncryptPass>();
+  });
 
-  PassRegistration<SymbolObfuscatePass>
-    symbolReg("symbol-obfuscate", "Obfuscate symbol names randomly");
+  // Register SymbolObfuscatePass
+  PassRegistration<SymbolObfuscatePass> symbolReg([]() {
+    return std::make_unique<SymbolObfuscatePass>();
+  });
 }

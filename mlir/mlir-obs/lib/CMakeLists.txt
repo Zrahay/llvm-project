@@ -1,7 +1,7 @@
 add_mlir_library(MLIROBS
   Passes.cpp
   SymbolPass.cpp
-  PassRegistrations.cpp
+  PassRegistration.cpp
 
   LINK_LIBS PUBLIC
     MLIRIR

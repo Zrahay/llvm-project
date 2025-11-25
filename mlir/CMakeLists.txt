@@ -260,7 +260,7 @@ message(STATUS ">>> MLIR: about to add_subdirectory(mlir-obs) - CWD=${CMAKE_CURR
 add_subdirectory(mlir-obs)
 
 # API needs all dialects for registration, but should be built before tests.
-add_subdirectory(test)
+add_subdirectory(tests)
 
 # C API needs all dialects for registration, but should be built before tests.
 add_subdirectory(lib/CAPI)

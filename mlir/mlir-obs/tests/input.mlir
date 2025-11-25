@@ -6,6 +6,7 @@ module {
 
   // Symbol test
   func.func @main() {
+    // call with no results
     func.call @hello() : () -> ()
     return
   }

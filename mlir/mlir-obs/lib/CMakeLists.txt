@@ -1,6 +1,7 @@
 add_mlir_library(MLIROBS
   Passes.cpp
   SymbolPass.cpp
+  PassRegistrations.cpp
 
   DEPENDS
     MLIROBSIncGen

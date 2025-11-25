@@ -254,6 +254,13 @@ set(MLIR_SRC_SHARDER_TABLEGEN_TARGET "${MLIR_SRC_SHARDER_TABLEGEN_TARGET}" CACHE
 
 add_subdirectory(include/mlir)
 add_subdirectory(lib)
+
+# Adding your custom Obfuscation Project
+add_subdirectory(mlir-obs)
+
+# API needs all dialects for registration, but should be built before tests.
+add_subdirectory(test)
+
 # C API needs all dialects for registration, but should be built before tests.
 add_subdirectory(lib/CAPI)
 
